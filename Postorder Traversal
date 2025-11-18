@@ -1,0 +1,17 @@
+import java.util.*;
+
+class PostorderTraversal {
+    public List<Integer> postorder(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        postorderHelper(root, result);
+        return result;
+    }
+
+    private void postorderHelper(TreeNode node, List<Integer> list) {
+        if (node == null) return;
+
+        postorderHelper(node.left, list);  // Left
+        postorderHelper(node.right, list); // Right
+        list.add(node.val);                // Root
+    }
+}
