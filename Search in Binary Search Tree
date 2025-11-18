@@ -1,0 +1,10 @@
+class SearchInBST {
+    public boolean search(TreeNode root, int key) {
+        while (root != null) {
+            if (key == root.val) return true;
+            else if (key < root.val) root = root.left;
+            else root = root.right;
+        }
+        return false;
+    }
+}
